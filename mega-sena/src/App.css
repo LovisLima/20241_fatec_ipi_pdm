@@ -1,0 +1,14 @@
+CSS
+
+.numero {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.acerto {
+  color: green;
+  margin-left: 5px;
+}
