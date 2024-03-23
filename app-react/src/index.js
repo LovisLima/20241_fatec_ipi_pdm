@@ -24,7 +24,7 @@ const App = () => {
       {/* primeiro pedido */}
       <div className="col-sm-12 col-lg-6 col-xxl-3">
         {/* .card>.card-header.text-muted{22/04/2021}+.card-body.d-flex */}
-        <Cartao cabecalho="22/04/2023">
+        <Cartao cabecalho="21/04/2023">
           <Pedido
             iconeNome="fa-hdd"
             iconeEfeito="fa-fade"
@@ -48,7 +48,7 @@ const App = () => {
       <div className="col-sm-12 col-lg-6 col-xxl-3">
         {/* .card>.card-header.text-muted{22/04/2021}+.card-body.d-flex */}
         <Cartao
-          cabecalho="21/01/2023">
+          cabecalho="23/01/2023">
           <Pedido 
             iconeNome="fa-book"
             iconeEfeito="fa-shake"
@@ -61,7 +61,7 @@ const App = () => {
       <div className="col-sm-12 col-lg-6 col-xxl-3">
       {/* .card>.card-header.text-muted{22/04/2021}+.card-body.d-flex */}
         <Cartao
-          cabecalho="22/04/2022">
+          cabecalho="24/04/2022">
           <Pedido 
             iconeNome="fa-laptop"
             iconeEfeito="fa-flip"
