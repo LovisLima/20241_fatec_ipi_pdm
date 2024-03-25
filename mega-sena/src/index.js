@@ -11,6 +11,16 @@ class App extends React.Component {
     };
   }
 
+  gerarNumeros = () => {
+    let n = [];
+    while (n.length < 6) {
+      let numero = Math.floor(Math.random() * 60) + 1;
+      if (!n.includes(numero)) {
+        n.push(numero);
+      }
+    }
+    this.setState({ numeros: n });
+  };
 
   render() {
     console.log(this.state);
