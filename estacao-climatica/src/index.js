@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import { EstacaoClimatica } from './EstacaoClimatica'
 class App extends React.Component{
   // window.navigator.geolocation.getCurrentPosition((position) => {
   //   console.log(position)
@@ -95,7 +95,7 @@ class App extends React.Component{
 
   
   render(){
-    console.log(this.state)
+    console.log("render")
     return (
       // responsividade, margem acima
       <div className='container mt-2'>
@@ -103,6 +103,7 @@ class App extends React.Component{
         <div className="row justify-content-center">
           {/* oito colunas das doze disponíveis serão usadas para telas médias em diante */}
           <div className="col-sm-12 col-md-8">
+          <EstacaoClimatica />
               {/* um cartão do Bootstrap */}
               <div className="card">
                 {/* o corpo do cartão */}
