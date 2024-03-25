@@ -15,7 +15,8 @@ class App extends React.Component{
       longitude: null,
       estacao: null,
       data: null,
-      icone: null
+      icone: null,
+      mensagemDeErro: null
     }
     console.log ('construtor')
   }
@@ -85,7 +86,8 @@ class App extends React.Component{
         })
       },
       //caso contrário (usuário negou, por exemplo)
-      (erro) => {
+      (erro) => {console.log(erro)
+        this.setState({mensagemDeErro: `Tente novamente mais tarde`})
 
       }
     )
@@ -93,6 +95,7 @@ class App extends React.Component{
 
   
   render(){
+    console.log(this.state)
     return (
       // responsividade, margem acima
       <div className='container mt-2'>
@@ -116,9 +119,14 @@ class App extends React.Component{
                   </div>
                   <div>
                     <p className="text-center">
+                      {/* renderização condicional */}  
                       {
                       this.state.latitude ?
-                        `Coordenadas: ${this.state.latitude, this.state.longitude}. Data: ${this.state.data}` :
+                        `Coordenadas: ${this.state.latitude, this.state.longitude}. Data: ${this.state.data}` 
+                        :
+                        this.state.mensagemDeErro ?
+                        `${this.state.mensagemDeErro}`
+                        :
                         `Clique no botão para saber a sua estação climática`
                       }
                     </p>
