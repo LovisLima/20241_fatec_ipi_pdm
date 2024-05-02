@@ -75,6 +75,8 @@ const App = () => {
     <div className="row">
       {/* exibir um nome de empresa que você vai inventar e pelo menos três icones de redes sociais */}
        <Rodape nomeEmpresa ="MinhaEmpresa"/> 
+
+      
     </div>
   </div>
 }
