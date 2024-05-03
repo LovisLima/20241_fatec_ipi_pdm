@@ -1,7 +1,12 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Busca from './Busca'
 
-class App extends Component {
+export default class App extends React.Component {
+
+  onBuscaRealizada = (termo) => {
+    console.log(`Busca realizada: ${termo}`)
+  }
+
   render() {
     return (
       <div
@@ -11,7 +16,7 @@ class App extends Component {
           </div>
 
           <div className="col-12">
-              <Busca 
+              <Busca onBuscaRealizada={this.onBuscaRealizada}
                 classNameInputText="col-12 md:col-6"
                 classNameButton="col-12 md:col-6"/>
           </div>
@@ -21,4 +26,3 @@ class App extends Component {
 }
 
 
-export default App

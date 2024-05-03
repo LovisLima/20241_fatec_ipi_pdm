@@ -9,13 +9,19 @@ export default class Busca extends Component {
     termoDeBusca:''
   }
   
+  onFormSubmit = (event) => {
+    // Evita que o formulário seja submetido
+    event.preventDefault()
+    this.props.onBuscaRealizada(this.state.termoDeBusca)
+  }
+
   onTermoAlterado = (event) => {
     console.log(event.target.value)
     this.setState({termoDeBusca: event.target.value});
   }  
   render() {
     return (
-      <form>
+      <form onSubmit={this.onFormSubmit}>
         <div className='grid'>
           <div
             className={`${this.props.classNameInputText}`}>
