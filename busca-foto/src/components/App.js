@@ -4,6 +4,7 @@ import env from 'react-dotenv'
 import ListaImagens from './ListaImagens'
 import PexelsLogo from './PexelsLogo'
 import { createClient } from 'pexels'
+import pexelsClient from '../utils/pexelsClient'
 export default class App extends React.Component {
 
 pexelsClient = null
@@ -14,13 +15,24 @@ componentDidMount() {
 
 state = {pics:[]}
 
-state = {pics: []}
+//onBuscaRealizada = (termo) => {
+//this.pexelsClient.photos.search({
+//query: termo
+//})
+//.then(pics => this.setState({pics: pics.photos}))
+//}
+
 onBuscaRealizada = (termo) => {
-this.pexelsClient.photos.search({
-query: termo
-})
-.then(pics => this.setState({pics: pics.photos}))
-}
+  pexelsClient.get('/search', {
+  params: { query: termo}
+  })
+  .then(result => {
+  console.log(result)
+  //data é um atributo definido pela axios
+  //o conteúdo da resposta vem associado a essa chave
+  this.setState ({pics: result.data.photos})
+  })
+  }
 
   render() {
     return (
@@ -39,15 +51,12 @@ query: termo
                 classNameButton="col-12 md:col-6"/>
           </div>
 
-          <div className="col-8">
           
-          <div className="col-8">
-          <ListaImagens pics={this.state.pics}/>
-          </div>
-))
-
-</div>
-      </div>
+          <div className="grid">
+  <ListaImagens imgStyle={'col-12 md:col-6 lg:col-4 xl:col-3'} pics={this.state.pics}/>
+            </div>
+        </div>
+      
     )
   }
 }
