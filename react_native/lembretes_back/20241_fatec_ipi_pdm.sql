@@ -3,6 +3,13 @@
 
 SELECT * FROM tb_lembrete;
 
+INSERT INTO tb_lembrete (texto) VALUES
+('descansar');
+
+INSERT INTO tb_lembrete (texto) VALUES
+('Fazer um suco');
+
+
 
 INSERT INTO tb_lembrete (texto) VALUES
 ('Ver um filme');
@@ -11,7 +18,7 @@ INSERT INTO tb_lembrete (texto) VALUES
 INSERT INTO
     tb_lembrete (texto)
 VALUES ('Ir à feira'),
-    ('Encerrar a aula');
+       ('Encerrar a aula');
 
 
 --postgresql
